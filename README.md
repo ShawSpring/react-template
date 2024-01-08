@@ -58,11 +58,13 @@ export default {
 ```
 
 2. [Using PostCSS as your preprocessor](https://tailwindcss.com/docs/using-with-preprocessors#using-post-css-as-your-preprocessor)
-   不使用 sass,使用 tailwind 推荐了两个 postcss 插件
+   不使用 sass,使用 tailwind 推荐了两个 postcss 插件,
 
 ```bash
-pnpm install -D postcss-import postcss-nesting
+pnpm install -D postcss-import
 ```
+
+> tailwindcss/nesting 是 tailwindcss 自带
 
 ```js
 // postcss.config.js
@@ -87,17 +89,15 @@ module.exports = {
     margin: 0 auto;
     padding: 2rem;
     text-align: center;
+    @apply bg-slate-100;
   }
   h1 {
-    @apply text-3xl;
-  }
-  h2 {
     @apply text-2xl;
   }
-  h3 {
+  h2 {
     @apply text-xl;
   }
-  h4 {
+  h3 {
     @apply text-lg;
   }
   a {
