@@ -11,7 +11,7 @@ module.exports = {
   plugins: ['react-refresh'],
   rules: {
     'react-refresh/only-export-components': [
-      'warn',
+      'off', //* tsx文件中仅允许导出组件,关闭
       { allowConstantExport: true },
     ],
     /* temporary rule for development */
