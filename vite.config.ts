@@ -9,9 +9,10 @@ export default defineConfig({
     react(),
     // ViteSvgSpriteWrapper({
     //   icons: 'src/assets/icons/*.svg',
-    //   outputDir: 'src/assets',
+    //   outputDir: 'public/assets',
     // }),
   ],
+
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src'),
