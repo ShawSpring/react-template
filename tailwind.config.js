@@ -12,8 +12,11 @@ export default {
     },
   },
   plugins: [
-    plugin(function ({ matchVariant, addComponents, theme }) {
+    plugin(function ({matchVariant, addVariant, addComponents, theme}) {
+      addVariant('notlast', '&:not(:last-child)'); // [&:not(:last-child)]
+      addVariant('hocus', ['&:hover', '&:focus']); //一次生成两个 &:hover &:focus
       matchVariant(
+        // nth-[]  ==> [&:nth-child()]
         'nth',
         (value) => {
           return `&:nth-child(${value})`;
@@ -26,6 +29,7 @@ export default {
           },
         }
       );
+
       addComponents({
         // '.card-my': {
         //   borderRadius: theme('spacing.2'),
