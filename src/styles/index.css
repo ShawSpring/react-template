@@ -25,4 +25,14 @@
   a {
     @apply text-blue-600 underline;
   }
+
+  ul{
+    list-style: none;
+    & li{
+      font-size: larger;
+    }
+    li{
+      color: theme(colors.cyan.600);
+    }
+  }
 }
