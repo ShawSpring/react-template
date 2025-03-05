@@ -1,0 +1,15 @@
+@import "tailwindcss" source("../../src");
+/* https://tailwindcss.com/docs/installation/using-vite */
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* @layer base{
+
+} */
+
+@layer components {
+	a {
+		color: var(--color-lime-900);
+	}
+}
+
