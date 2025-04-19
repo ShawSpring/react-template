@@ -8,8 +8,11 @@
 } */
 
 @layer components {
-	a {
-		color: var(--color-lime-900);
-	}
-}
+  button {
+    @apply ring hover:ring-2 active:scale-90 active:ring-1 transition-all;
+  }
 
+  a {
+    color: var(--color-lime-900);
+  }
+}

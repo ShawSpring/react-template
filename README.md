@@ -32,33 +32,18 @@ resolve: {
     "paths": { "@/*": ["src/*"] }
 ```
 
-### [biome](https://biomejs.dev/zh-cn/) 
-1. 删除所有eslint有关的包,禁用eslint插件， 因为biome取代了eslint
-2. 添加biome
+### [oxlint](https://oxc.rs/docs/guide/usage/linter.html) 
+使用oxlint 代替 eslint 
+1. 删除所有eslint有关的包,禁用eslint插件
+2. 安装oxlint, 和vscode插件oxc. 
 ```bash
-# 版本不太稳定，建议使用具体的版本
-pnpm add --save-dev --save-exact @biomejs/biome
-# 创建biome的配置文件
-pnpm biome init 
+pnpm add -D oxlint
+# 创建配置文件,默认的规则够用就不需要
+pnpm oxlint --init 
 ```
-配置文件 biome.json
+package.json 添加 lint脚本命令
 ```json
-"files": {
-		"include":["src"],
-		"ignore": ["**/*.css"] 
-	},
-  "linter": {
-		"enabled": true,
-		"rules": {
-			"style":{
-				"noNonNullAssertion": "off"
-			},
-			"a11y": {
-				"useButtonType":"off"
-			},
-			"recommended": true
-		}
-	},
+	"lint": "pnpm dlx oxlint --fix",
 ```
 
 ### [tailwind](https://tailwindcss.com/docs/guides/vite)
