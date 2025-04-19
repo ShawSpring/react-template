@@ -3,16 +3,20 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* @layer base{
-
-} */
-
-@layer components {
-  button {
-    @apply ring hover:ring-2 active:scale-90 active:ring-1 transition-all;
+@layer theme{
+  .dark{
+    color-scheme: dark;
   }
+}
 
+@layer base {
+  input{
+    @apply border;
+  }
   a {
-    color: var(--color-lime-900);
+    all:revert;
+  }
+  button {
+    @apply ring hover:ring-2 active:scale-90 active:ring-1 transition-all px-2 cursor-pointer;
   }
 }
